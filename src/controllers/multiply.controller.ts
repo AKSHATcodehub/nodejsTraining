@@ -12,7 +12,7 @@ class MultiplyController{
         
 
         }catch(error){
-            apiErrorHandler(error,req,res,'Fetch dashboard data failed.');
+            apiErrorHandler(error,req,res,'Fetch data failed.');
            
         }
     }

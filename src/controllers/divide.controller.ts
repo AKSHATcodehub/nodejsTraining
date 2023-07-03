@@ -11,7 +11,7 @@ class DivideController{
             res.send(`Divison of ${req.body.num1} and ${req.body.num2} is ${divide}`)
 
         }catch(error){
-            apiErrorHandler(error,req,res,'Fetch dashboard data failed.');
+            apiErrorHandler(error,req,res,'Fetch data failed.');
            
         }
     }

@@ -11,7 +11,7 @@ class SumController{
             res.send(`Sum of ${req.body.num1} and ${req.body.num2} is ${sum}`)
 
         }catch(error){
-            apiErrorHandler(error,req,res,'Fetch dashboard data failed.');
+            apiErrorHandler(error,req,res,'Fetch data failed.');
            
         }
     }

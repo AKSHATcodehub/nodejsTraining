@@ -11,7 +11,7 @@ class SubtractionController{
             res.send(`Subtraction of ${req.body.num1} and ${req.body.num2} is ${sub}`)
 
         }catch(error){
-            apiErrorHandler(error,req,res,'Fetch dashboard data failed.');
+            apiErrorHandler(error,req,res,'Fetch data failed.');
            
         }
     }
