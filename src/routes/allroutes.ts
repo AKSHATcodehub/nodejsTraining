@@ -14,13 +14,24 @@ class AllRoutes{
         this.intializeRoutes()
     }
     intializeRoutes(){
-        this.router.get('/sum',sumController.getSumData);
-        this.router.get('/subtraction',subtractionController.getSubtractionData);
-        this.router.get('/multiply',multiplyController.getMultiplyData);
-        this.router.get('/divide',divideController.getDivideData);
-        this.router.get('/modulus',modulusController.getModulusData);
-        this.router.get('/square_root',squareRootController.getSquareRootData);
-        this.router.get('/log',logController.getLogData);
+        /**
+         * @openapi
+         * /sum
+         *  get:
+         *      tag:
+         *          - sum of two number
+         *          description:Responds if the app is up and running
+         *          responses:
+         *              200:
+         *                  description:App is running
+         */
+        this.router.post('/sum',sumController.getSumData);
+        this.router.post('/subtraction',subtractionController.getSubtractionData);
+        this.router.post('/multiply',multiplyController.getMultiplyData);
+        this.router.post('/divide',divideController.getDivideData);
+        this.router.post('/modulus',modulusController.getModulusData);
+        this.router.post('/square_root',squareRootController.getSquareRootData);
+        this.router.post('/log',logController.getLogData);
     }
 
 }

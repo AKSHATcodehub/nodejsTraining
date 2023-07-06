@@ -3,6 +3,7 @@ import cors from 'cors';
 import winston from 'winston';
 import Routes from "./routes/routes";
 import { unCoughtErrorHandler } from "./handler/errorhandler";
+import swaggerDocs from "../src/utils/swagger";
 
 export default class Server{
     constructor(app:Application){
