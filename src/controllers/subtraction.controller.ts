@@ -8,7 +8,7 @@ class SubtractionController{
     getSubtractionData(req:Request,res:Response,next:NextFunction){
         try{
             let sub = req.body.num1 - req.body.num2
-            res.send(`Subtraction of ${req.body.num1} and ${req.body.num2} is ${sub}`)
+            res.status(200).send(`Subtraction of ${req.body.num1} and ${req.body.num2} is ${sub}`)
 
         }catch(error){
             apiErrorHandler(error,req,res,'Fetch data failed.');
