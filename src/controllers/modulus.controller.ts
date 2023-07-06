@@ -7,9 +7,12 @@ class ModulusController{
 
     getModulusData(req:Request,res:Response,next:NextFunction){
         try{
-            let modulo =  Number(req.body.num2) %  Number(req.body.num1)
-            res.status(200).send(`Modulus of ${req.body.num1} and ${req.body.num2} is ${modulo}`)
-
+            if(req.body.num1 && req.body.num2){
+                let modulo =  Number(req.body.num2) %  Number(req.body.num1)
+                res.status(200).send(`Modulus of ${req.body.num1} and ${req.body.num2} is ${modulo}`)
+            }else{
+                res.status(400).send({message:"Invalid Payload"})
+            }
         }catch(error){
             apiErrorHandler(error,req,res,'Fetch data failed.');
            

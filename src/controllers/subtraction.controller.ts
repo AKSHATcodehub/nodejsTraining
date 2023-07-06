@@ -7,8 +7,12 @@ class SubtractionController{
 
     getSubtractionData(req:Request,res:Response,next:NextFunction){
         try{
-            let sub =  Number(req.body.num1) -  Number(req.body.num2)
-            res.status(200).send(`Subtraction of ${req.body.num1} and ${req.body.num2} is ${sub}`)
+            if(req.body.num1 && req.body.num2){
+                let sub =  Number(req.body.num1) -  Number(req.body.num2)
+                res.status(200).send(`Subtraction of ${req.body.num1} and ${req.body.num2} is ${sub}`)
+            }else{
+                res.status(400).send({message:"Invalid Payload"})
+            }
 
         }catch(error){
             apiErrorHandler(error,req,res,'Fetch data failed.');

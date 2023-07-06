@@ -7,9 +7,12 @@ class MultiplyController{
 
     getMultiplyData(req:Request,res:Response,next:NextFunction){
         try{
-            let product =  Number(req.body.num1) *  Number(req.body.num2)
-            res.status(200).send(`Product of ${req.body.num1} and ${req.body.num2} is ${product}`)
-        
+            if(req.body.num1 && req.body.num2){
+                let product =  Number(req.body.num1) *  Number(req.body.num2)
+                res.status(200).send(`Product of ${req.body.num1} and ${req.body.num2} is ${product}`)
+            }else{
+                res.status(400).send({message:"Invalid Payload"})
+            }
 
         }catch(error){
             apiErrorHandler(error,req,res,'Fetch data failed.');
