@@ -7,7 +7,7 @@ class LogController{
 
     getLogData(req:Request,res:Response,next:NextFunction){
         try{
-            let log = Math.log(req.body.num1)
+            let log = Math.log( Number(req.body.num1))
             res.status(200).send(`Log of ${req.body.num1} is ${log}`)
         
 

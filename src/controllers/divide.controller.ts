@@ -7,7 +7,7 @@ class DivideController{
 
     getDivideData(req:Request,res:Response,next:NextFunction){
         try{
-            let divide = req.body.num2 / req.body.num1
+            let divide =  Number(req.body.num2) /  Number(req.body.num1)
             res.status(200).send(`Divison of ${req.body.num1} and ${req.body.num2} is ${divide}`)
 
         }catch(error){

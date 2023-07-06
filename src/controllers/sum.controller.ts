@@ -7,7 +7,7 @@ class SumController{
 
     getSumData(req:Request,res:Response,next:NextFunction){
         try{
-            let sum = req.body.num1 + req.body.num2
+            let sum = Number(req.body.num1) + Number(req.body.num2)
             res.status(200).send(`Sum of ${req.body.num1} and ${req.body.num2} is ${sum}`)
 
         }catch(error){
