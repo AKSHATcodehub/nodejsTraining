@@ -1,0 +1,25 @@
+openapi: 3.0.0
+info:
+  title: Sample API
+  description: Optional multiline or single-line description in HTML.
+  version: 1.0.0
+servers:
+paths:
+  /login:
+    post:
+      summary: login api instagram
+      description:  Returns TOKEN and stores it in redis server
+      requestBody: 
+        required: true
+        content: 
+          application/json:
+            schema:
+              type: object
+              properties:
+                userName:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '200':
+            description: OK
